@@ -1,5 +1,5 @@
 MORSE_CODE = {
-    '.-' => 'A',
+  '.-' => 'A',
   '-...' => 'B',
   '-.-.' => 'C',
   '-..' => 'D',
@@ -25,18 +25,18 @@ MORSE_CODE = {
   '-..-' => 'X',
   '-.--' => 'Y',
   '--..' => 'Z'
-}
+}.freeze
 
 def decode_char(code)
-    MORSE_CODE[code]
+  MORSE_CODE[code]
 end
 
 def decode_word(word)
-    word.split.map { |c| decode_char(c) }.join
+  word.split.map { |c| decode_char(c) }.join
 end
 
 def decode(sentence)
-    sentence.split("   ").map { |w| decode_word(w) }.join(" ")
+  sentence.split('   ').map { |w| decode_word(w) }.join(' ')
 end
 
-puts decode(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...")
+puts decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
