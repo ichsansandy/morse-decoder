@@ -36,9 +36,9 @@ def decode_word(word)
 end
 
 def decode(sentence)
-  word = sentence.split("   ")
+  word = sentence.split('   ')
   result = word.map { |w| decode_word(w) }
-  result.join(" ")
+  result.join(' ')
 end
 
 puts decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
